@@ -1,0 +1,14 @@
+h1 {
+    color: darkblue;
+    text-align: center;
+}
+
+.highlight {
+    background-color: yellow;
+    font-weight: bold;
+}
+
+#main-title {
+    font-size: 28px;
+    text-decoration: underline;
+}

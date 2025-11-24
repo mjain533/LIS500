@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Model</title>
+  <link rel="stylesheet" href="stylepage.css" />
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="LIS500.html">Home</a> |
+    <a href="about.html">About Us</a> |
+    <a href="resources.html">Resources</a> |
+    <a href="hero.html">Tech Heroes</a>
+    <a href="Machine.html">AI Model</a>
+  </nav>
+
+  <h1>Our Tech Heroes</h1>
+
+  <!-- ====================== -->
+  <!-- Your Existing Content -->
+  <!-- (Shortened for space) -->
+  <!-- ====================== -->
+
+  <div class="section-card">
+    <h2>Kai Cenat (Alex’s Tech Hero)</h2>
+    <img src="Kai.png" alt="Kai Cenat" class="hero-img left" />
+    <p>...</p>
+  </div>
+
+  <div class="section-card">
+    <h2>Lanny Smoot (Mayank’s Tech Hero)</h2>
+    <img src="Lanny.png" alt="Lanny Smoot" class="hero-img right" />
+    <p>...</p>
+  </div>
+
+  <div class="section-card">
+    <h2>Colin Huang (Ethan’s Tech Hero)</h2>
+    <img src="Colin.png" alt="Colin Huang" class="hero-img left" />
+    <p>...</p>
+  </div>
+
+
+  <!-- ====================================== -->
+  <!-- NEW SECTION: Teachable Machine Model UI -->
+  <!-- ====================================== -->
+  <div class="section-card" style="text-align:center; margin-top:40px;">
+    <h2>Try Our AI Classifier</h2>
+    <p>Click below to activate your webcam and test our model.</p>
+
+    <button type="button" onclick="init()" style="padding:10px 20px; cursor:pointer;">
+      Start Webcam & AI Model
+    </button>
+
+    <div id="webcam-container" style="margin-top:20px;"></div>
+    <div id="label-container" style="margin-top:10px; font-size:20px; font-weight:bold;"></div>
+  </div>
+
+
+  <!-- ======================= -->
+  <!-- Teachable Machine Script -->
+  <!-- ======================= -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+
+  <script>
+    const URL = "./my_model/";
+
+    let model, webcam, labelContainer, maxPredictions;
+
+    async function init() {
+        const modelURL = URL + "model.json";
+        const metadataURL = URL + "metadata.json";
+
+        model = await tmImage.load(modelURL, metadataURL);
+        maxPredictions = model.getTotalClasses();
+
+        webcam = new tmImage.Webcam(200, 200, true);
+        await webcam.setup();
+        await webcam.play();
+        window.requestAnimationFrame(loop);
+
+        document.getElementById("webcam-container").appendChild(webcam.canvas);
+        labelContainer = document.getElementById("label-container");
+        
+        for (let i = 0; i < maxPredictions; i++) {
+            labelContainer.appendChild(document.createElement("div"));
+        }
+    }
+
+    async function loop() {
+        webcam.update();
+        await predict();
+        window.requestAnimationFrame(loop);
+    }
+
+    async function predict() {
+        const prediction = await model.predict(webcam.canvas);
+        for (let i = 0; i < maxPredictions; i++) {
+            labelContainer.childNodes[i].innerHTML =
+                prediction[i].className + ": " + prediction[i].probability.toFixed(2);
+        }
+    }
+  </script>
+
+</body>
+</html>

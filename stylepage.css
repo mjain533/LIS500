@@ -1,0 +1,147 @@
+.profile-img, .hero-img {
+  width: 220px;
+  border-radius: 12px;
+  margin: 15px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.main-image {
+  display: block;
+  margin: 40px auto;
+  max-width: 80%;
+  border-radius: 16px;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Navbar */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 15px 20px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  margin-bottom: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #444;
+  padding: 10px 15px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background: #ff7eb9;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Headings */
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #444;
+}
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px #444;
+}
+
+/* Paragraphs */
+p {
+  max-width: 700px;
+  margin: 15px auto;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+/* Cards for content sections */
+.section-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 30px;
+  margin: 20px auto;
+  max-width: 800px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease;
+}
+
+.section-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+ul li {
+  background: #fff;
+  padding: 12px 18px;
+  border-radius: 15px;
+  margin: 10px 0;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+ul li:hover {
+  background: #ffcef3;
+  transform: scale(1.02);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  border-radius: 20px;
+  margin: 100px auto;
+  display: block;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 0.9rem;
+  color: #222;
+  opacity: 0.8;
+}

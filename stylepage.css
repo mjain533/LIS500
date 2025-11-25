@@ -19,6 +19,16 @@
   border-radius: 16px;
 }
 
+#webcam-container canvas {
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.section-card button:hover {
+  background: #444;
+  color: white;
+  transition: 0.3s;
+}
 .about-container {
   display: flex;
   flex-direction: column;

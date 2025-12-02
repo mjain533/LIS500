@@ -1,5 +1,5 @@
 .profile-img, .hero-img {
-  width: 220px;
+  width: 150px;
   border-radius: 12px;
   margin: 15px;
 }
@@ -15,7 +15,7 @@
 .main-image {
   display: block;
   margin: 40px auto;
-  max-width: 80%;
+  max-width: 50%;
   border-radius: 16px;
 }
 
@@ -140,11 +140,20 @@ ul li:hover {
 
 /* Images */
 img {
-  max-width: 100%;
+  max-width: 70%;
   border-radius: 20px;
   margin: 100px auto;
   display: block;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Image Row Container */
+.image-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin: 20px auto;
 }
 
 /* Footer */

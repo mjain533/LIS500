@@ -9,9 +9,9 @@
 <body>
   <!-- Navigation Bar -->
   <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html" >About Us</a> |
-    <a href="resources.html" >Resources</a> |
+    <a href="index.html">Home</a> 
+    <a href="about.html" >About Us</a> 
+    <a href="resources.html" >Resources</a> 
     <a href="hero.html" >Tech Heroes</a>
     <a href="Machine.html">AI Model</a>
     <a href="MachineLearning.html">Machine Learning</a>
@@ -29,9 +29,15 @@
 
     <p>
 Our group decided to teach a machine to recognize popular sportswear brand logos: Nike, Adidas, New Balance, and Puma. We liked this idea because these logos are visually distinct and familiar, so most people visiting our site can immediately understand what the model is supposed to do. Instead of relying on abstract shapes or random objects, we wanted something everyday and recognizable that would make the interaction with the webcam feel more intuitive and fun, such as showing a logo on a T-shirt or from a phone to the camera on a computer. Our goal was to create a simple, interactive demo where users could hold up a logo to their camera, watch the prediction numbers change in real time, and see the model “gain confidence” as it recognized the brand.
+</p>
+<p>
 We built the model in Teachable Machine using four image classes, one for each logo. For each class, we captured a variety of images: printed logos on paper, screenshots on a phone or laptop screen, and even logos on clothing. We quickly learned that variety mattered. Early on, the model worked great if we used the exact same image we trained it on, but it struggled when the logo was smaller, rotated, or partially cut off. That pushed us to add more diverse training examples: different backgrounds, lighting, angles, and sizes. The prediction output is shown as a probability between 0.00 and 1.00 with two decimal places. As the model “sees” a logo, the number for that brand starts low and then climbs; once it reaches close to 1.00, it essentially confirms its guess.
+</p>
+<p>
 On our website, we embedded the exported Teachable Machine model into a dedicated project page. To keep the interface straightforward, we added a short explanation at the top, then a button that says “Click below to activate your webcam and test our model,” followed by a “Start Webcam & AI Model” button. When users click that, the webcam feed appears, and the prediction values start updating live below the video. We wanted the process to feel almost like a game: grab anything around you with one of these logos (a shoe, shirt, or even an image on your phone) and see how quickly the AI can identify it.
-We definitely hit some bumps along the way. At one point, the Puma logo and the Nike swoosh were getting mixed up more often than we expected. The model tended to confuse simple curved shapes, especially when they were small or blurry. To fix this, we collected more images that clearly showed the full wordmark, like “Puma” written out next to the jumping cat, and retrained the model with that extra data. That made the predictions much more stable. We also had some technical headaches with cookies and browser permissions. Sometimes the webcam simply wouldn’t start, even though the button was being clicked. After some trial-and-error, we realized our browser’s privacy settings and cross-site cookie rules were blocking the webcam script from loading correctly. We had to double-check and test it in multiple browsers before it worked reliably. Overall, building this project showed us how much small design decisions, training data choices, and tiny code issues can impact how “smart” an AI model appears to users.
+</p>
+<p>
+  We definitely hit some bumps along the way. At one point, the Puma logo and the Nike swoosh were getting mixed up more often than we expected. The model tended to confuse simple curved shapes, especially when they were small or blurry. To fix this, we collected more images that clearly showed the full wordmark, like “Puma” written out next to the jumping cat, and retrained the model with that extra data. That made the predictions much more stable. We also had some technical headaches with cookies and browser permissions. Sometimes the webcam simply wouldn’t start, even though the button was being clicked. After some trial-and-error, we realized our browser’s privacy settings and cross-site cookie rules were blocking the webcam script from loading correctly. We had to double-check and test it in multiple browsers before it worked reliably. Overall, building this project showed us how much small design decisions, training data choices, and tiny code issues can impact how “smart” an AI model appears to users.
     </p>
 
   </div>
@@ -39,14 +45,23 @@ We definitely hit some bumps along the way. At one point, the Puma logo and the 
   <!-- ===================== -->
   <!-- our project to the Joy reading -->
   <!-- ===================== -->
-<h1>our project to the Joy reading</h2>
+<img src="UnmaskingAI.png" alt="UnmaskingAI" class="main-image" />
+<h1>Relating to Joy Buolamwini's Unmasking AI</h2>
   <div class="section-card">
 
     <p>
 Part five of Unmasking AI: My Mission to Protect What Is Human in a World of Machines focuses on a key idea: AI systems do not “see” the world the way humans do. Instead, they have to rely on the data we provide and the assumptions built into their design. This directly connects to our project of building the Teachable Machine model to recognize the Nike, Adidas, New Balance, and Puma logos, because our entire model was shaped by the images that Mayank chose to show it, and what images we didn’t show as well.
+</p>
+<p>
 Buolamwini explains that AI cannot be neutral or intelligent on its own, but it only reflects the limits, priorities, and blind spots of its training data. When we created our logo-recognition model, we experienced that firsthand. Our model worked very well when we showed it the same images we used during training, but it struggled when the logo was rotated, blurry, or on an unexpected background, so we often had to show the “perfect” image. This mirrors the reading’s point that machines only understand what they have been taught to recognize and cannot always understand when there is a slight change in image. If the system never “sees” or recalls a logo at an angle or in low lighting during training, it cannot generalize as a human would because they didn’t see it in training. A person can instantly recognize a Nike swoosh on a shoe even if part of it is covered, but our model needed dozens of similar examples before it could correctly guess in those situations, or the model may try to recognize it, but may not be nearly as confident.
+</p>
+<p>
 In part five, Buolamwini stresses how the human choices shape the machine's behavior. In our project, we decided which logos to include, how many images to collect, and which examples were considered “good” or “good enough” for our training data. When the Puma and Nike logos were being confused, we realized that the model wasn’t wrong on its own, but we had failed to include enough clear, varied examples, and once we added more quantity of clear and better images, we saw the machine slowly improve. This connects to the book’s warning of how AI errors are often blamed on machines, but yet the responsibility usually belongs to the humans who originally designed and trained them, like how we had to add more and better images. This showed us that when we improve the  AI model, it was less about fixing intelligence and more about improving the information it learns from us.
+</p>
+<p>
 The reading also discusses how AI can give a false impression of certainty. Our model shows prediction values rising toward the 1.00 mark, which can make the system feel confident. But just like Buolamwini cautions, these numbers are not proof of the model's understanding, only probability based on patterns and recognition from the images that we provided. Our model doesn’t know what Nike is, but it only knows which pixels resemble previous Nike images. This reinforces Buolamwini's message that AI can look smart without actually even being aware that it is incorrect.
+</p>
+<p>
 Overall, our project reflects the core lesson that AI is a mirror of human design. Our Teachable Machine did not become “intelligent” on its own, but it simply learned patterns we chose to teach it for the model. By building this system ourselves, we saw exactly how fragile, biased, and limited our AI model could be, and also how much human responsibility is hidden behind the screen.
 
     </p>
